@@ -25,40 +25,40 @@
 </head>
 
 <body>
-	<div id="content">
+	<div class="content">
 		<h1>iCheckMovies IMDb Top 250</h1>
 	
-		<div id="intro">
+		<div class="intro">
 			<img src="./images/toplist.jpg">
-			<div id="description">
+			<div class="intro--description">
 				<strong>An official iCheckMovies list.</strong>
 				<p>The IMDb top 250 is probably the most well-known movie list in the world. It has earned this reputation through the fact that it has been composed by aggregating the votes of many normal moviegoers. In other words, this is a list by and for the people and not some elite movie-critics list.</p>
 			</div>
 		</div>
 	
 			
-		<div id="options">
+		<div id="options" class="options">
 			<form>
 				<input type="checkbox" name="notseen" value="notseen" id="seen-filter">Max gezien door: <span id="user-range-value" style="width: 20px">0</span> personen 
 				<input type="range" min="0" max="6" value="0" id="user-range" />
 			</form>
 			<div class="options--present">
 				<span>Force present:</span>
-				<div id="force-filter"></div>
+				<div class="force-filter"></div>
 			</div>
 		</div>
 
-        <form id="upload">
+        <form class="uploadBtn">
             <span>Upload CSV bestanden</span>
             <input type="file" multiple="" id="fileInput" onchange="handleFiles(this.files)" accept=".csv">
         </form>
         
-		<div id="output" class="clear"></div>
+		<div id="output" class="output clear"></div>
 	</div>
   <footer>
-  	<p>Made by Donaldini&nbsp;&nbsp;|&nbsp;&nbsp;<a class="fancybox" href="http://donaldini.be/icheckmovies/#changelog" title="Changelog">version 1.2</a></p>
+  	<p>Made by Donaldini&nbsp;&nbsp;|&nbsp;&nbsp;<a class="fancybox" href="#changelog" title="Changelog">version 1.2</a></p>
   	
-	<div id="changelog">
+	<div class="changelog">
 		<h2>v1.2 (2014-06-20)</h2>
 		<strong>CHANGED</strong>
 		<ul>
