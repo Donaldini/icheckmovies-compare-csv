@@ -1,13 +1,13 @@
 "use strict";
 
-// Globale variabelen --------------------------------------------- //
+// Global vars ----------------------------------------------------------------- //
 var films = [];
-var users = [];				// Lijst met de checks van alle users
+var users = [];				// List of all user checks
 
-var filmNotset = true;		// Checken of de filminfo ingeladen is
-var aantalfiles = 0;		// Aantal files dat we zullen inladen
-var forcedUsers = {};		// Deelnemers die zéker de film gezien moeten hebben
-// ---------------------------------------------------------------- //
+var filmNotset = true;		// Check if all movie info has been loaded
+var numMovies = 0;		// Amount of movies that need to be loaded
+var forcedUsers = {};		// Number of users that need to have seen the movie
+// ----------------------------------------------------------------------------- //
 
 // Toggle button voor de ongeziene films
 $( "input[name=notseen]" ).change(function() {
@@ -36,9 +36,9 @@ function handleFiles(files) {
 	if (window.FileReader) {
 		// FileReader are supported.
 		var bestand;
-		aantalfiles = files.length;
+		numMovies = files.length;
 
-		$('#user-range').attr('max', aantalfiles);
+		$('#user-range').attr('max', numMovies);
 		
 		for(var i=0; i < files.length; i++){
 			bestand = files[i];
@@ -80,9 +80,9 @@ function loadHandler(event,username) {
 }
 
 function finishedHandler(event) {
-	aantalfiles -= 1;
+	numMovies -= 1;
 	
-	if(aantalfiles == 0){
+	if(numMovies == 0){
 		//console.log("All files loaded;");
 		renderOutput();
 	}
@@ -199,14 +199,14 @@ function renderOutput(){
 		if(i==0){
 			output += "<tr>";
 			// Eerste lijn is de header
-			output += "<th>" + film.rank + "</th>";
-			output += "<th></th>";
-			output += "<th></th>";
-			output += "<th>" + film.title + "</th>";
+			output += "<th class='headerRank'>" + film.rank + "</th>";
+			output += "<th class='headerImdb'></th>";
+			output += "<th class='headerIcm'></th>";
+			output += "<th class='headerTitle'>" + film.title + "</th>";
 			
 			// Voor elke user een kolom met checks
 			for (var j = 0; j < users.length; j++) {
-				output += "<th>" + users[j].name + "</th>";
+				output += "<th class='headerUser'>" + users[j].name + "</th>";
 				user_index_mapping[users[j].name] = j;
 			}
 			
@@ -245,10 +245,10 @@ function renderOutput(){
 		
 			output += "<tr>";
 			// Basisinfo over film
-			output += "<td>" + film.rank + "</td>";
-			output += "<td><a href='" + film.imdburl + "' style='border: none;' target='_blank'><img src='images/imdb.png' /></a></td>";
-			output += "<td><a href='" + film.url + "' style='border: none;' target='_blank'><img src='images/icm.png' /></a></td>";
-			output += "<td><a href='" + film.imdburl + "' target='_blank'>" + film.title + " (" + film.year + ")</a></td>";
+			output += "<td class='tdRank'>" + film.rank + "</td>";
+			output += "<td class='tdImdb'><a href='" + film.imdburl + "' style='border: none;' target='_blank'><img src='images/imdb.png' /></a></td>";
+			output += "<td class='tdIcm'><a href='" + film.url + "' style='border: none;' target='_blank'><img src='images/icm.png' /></a></td>";
+			output += "<td class='tdTitle'><a href='" + film.imdburl + "' target='_blank'>" + film.title + " (" + film.year + ")</a></td>";
 		
 			// Voor elke user een kolom met checks
 			for (var j = 0; j < users.length; j++) {
@@ -257,20 +257,20 @@ function renderOutput(){
 								
 				userfilm = users[j].films[i];
 			
-				var klasse = "";
+				var cssClass = "";
 				var title = "";
 		
 				if(userfilm.checked != "no"){
-					klasse = "checked";
+					cssClass = "checked";
 		
 					var datum = userfilm.checked
 					title = "Deze film heb je gezien op " + userfilm.checked;
 				} else {
-					klasse = "unchecked";
+					cssClass = "unchecked";
 					title = "Nog niet gezien, vlug kijken!";
 				}
 	
-				output += "<td class='" + klasse + "' title='" + title + "'>" + userfilm.checked + "</td>";	
+				output += "<td class='tdUser " + cssClass + "' title='" + title + "'>" + userfilm.checked + "</td>";	
 			}
 				
 			output += "</tr>";
