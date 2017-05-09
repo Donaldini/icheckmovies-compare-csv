@@ -1,0 +1,6 @@
+div.FixedHeader_Cloned th,
+div.FixedHeader_Cloned td {
+	background-color: #f4f4ee !important;
+	border-collapse: separate;
+	border-spacing: 0;
+}
