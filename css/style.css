@@ -1,11 +1,13 @@
 body {
-	margin: 0;
-	margin-top: 15px;
+	position: relative;
+  	margin: 0;
 	background: #f4f4ee url('../images/backgroundNoise.png') 0 0 repeat;
+  	height: 100%;
 }
 
 .content {
 	margin: auto;
+	padding-top: 15px;
 	width: 855px;
 	min-height: 85%;
 }
@@ -134,7 +136,7 @@ input,
 	float: left;
 }
 
-.options{
+.options {
 	display: none;
 	float: right;
 
@@ -164,32 +166,16 @@ input,
     height: 11px;
 }
 
-.intro--description{
+.intro--description {
 	margin-left: 10px;
 	width: 775px;
 	font-style: italic;
 }
 
-footer {
-	position: relative;
-	bottom: -12px;
-	
-	background: #dfdcd6 url('../images/masterSprite.png') 0 -882px repeat-x;
-	min-height: 5%;
-	color: #a59c9c;
-}
-
-footer p{
-	padding: 4em 0 1em;
-	line-height: 1.5em;
-	font-size: 65.57%;
-	
-}
-
-div.changelog{
+div.changelog {
 	display: none;
 }
 
-.clear{
+.clear {
 	clear: both;
 }
