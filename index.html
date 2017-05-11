@@ -26,13 +26,12 @@
 
 <body>
 	<div class="content">
-		<h1>iCheckMovies IMDb Top 250</h1>
+		<h1>iCheckMovies Comparer</h1>
 	
 		<div class="intro">
-			<img src="./images/toplist.jpg">
 			<div class="intro--description">
-				<strong>An official iCheckMovies list.</strong>
-				<p>The IMDb top 250 is probably the most well-known movie list in the world. It has earned this reputation through the fact that it has been composed by aggregating the votes of many normal moviegoers. In other words, this is a list by and for the people and not some elite movie-critics list.</p>
+				<p>First <a href="https://www.icheckmovies.com/register/changeplan/?feature=toplist-export">export the csv files</a> of the people you want to compare checks with from the official iCheckMovies website.
+                Then select these files using the button below. The filename will be used as a title of the users column, so you might want to change the default filename.</p>
 			</div>
 		</div>
 	
@@ -44,7 +43,7 @@
 			</form>
 			<div class="options--present">
 				<span>Force present:</span>
-				<div class="force-filter"></div>
+				<div id="force-filter" class="force-filter"></div>
 			</div>
 		</div>
 

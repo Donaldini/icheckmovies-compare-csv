@@ -62,11 +62,9 @@ h1,
 
 .checked,
 .unchecked{
-	position: relative;
-	left: 32px;
+	display: inline-block;
 	width: 36px;
 	height: 32px;
-	text-indent: -9999px; /* get rid of any text */
 }
 
 .unchecked {
@@ -74,7 +72,7 @@ h1,
 }
 
 .checked {
-	background: transparent url('../images/checkbox.gif') no-repeat 0 0;
+	background: transparent url('../images/checkbox.gif') no-repeat 0 1px;
 }
 
 .headerImdb, 
@@ -96,6 +94,10 @@ td {
 
 .headerRank {
 	text-indent: -9999px; /* get rid of any text */
+}
+
+.headerUser {
+	min-width: 60px;
 }
 
 a {
@@ -122,18 +124,13 @@ footer,
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 1em;
 }
-
+	
 .output table td,
 p,
 strong,
 input,
 .options {
 	font-size: 0.8em;
-}
-
-.intro img,
-.intro--description {
-	float: left;
 }
 
 .options {
@@ -167,7 +164,6 @@ input,
 }
 
 .intro--description {
-	margin-left: 10px;
 	width: 775px;
 	font-style: italic;
 }

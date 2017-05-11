@@ -270,7 +270,7 @@ function renderOutput(){
 					title = "Nog niet gezien, vlug kijken!";
 				}
 	
-				output += "<td class='tdUser " + cssClass + "' title='" + title + "'>" + userfilm.checked + "</td>";	
+				output += "<td class='tdUser' title='" + title + "'><span class='" + cssClass + "'></span></td>";	
 			}
 				
 			output += "</tr>";
