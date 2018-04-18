@@ -21,6 +21,7 @@ h1,
 }
 
 .uploadBtn {
+	display: inline-block;
 	position: relative;
 	margin: 10px;
 	border: 1px solid #dfdcd6;
@@ -29,7 +30,6 @@ h1,
 	background: #dfdcd6;
 	cursor: pointer;
 	padding: 8px 14px 10px;
-	width: 190px;
 	overflow: hidden;
 	
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
