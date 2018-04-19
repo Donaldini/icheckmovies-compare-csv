@@ -35,23 +35,23 @@
 			</div>
 		</div>
 	
-			
-		<div id="options" class="options">
+		<header class="header">	
+		    <div id="options" class="options">
 			<form>
-				<input type="checkbox" name="notseen" value="notseen" id="seen-filter">Seen by max amount of people: <span id="user-range-value" style="width: 20px">0</span> 
-				<input type="range" min="0" max="6" value="0" id="user-range" />
+				<input class="checkbox" type="checkbox" name="notseen" value="notseen" id="seen-filter">Seen by max amount of people: <span id="user-range-value" style="width: 20px">0</span> 
+				<input class="rangeselector" type="range" min="0" max="6" value="0" id="user-range" />
 			</form>
 			<div class="options--present">
 				<span>Force present:</span>
 				<div id="force-filter" class="force-filter"></div>
 			</div>
-		</div>
+		    </div>
 
-        <form class="uploadBtn">
-            <span>Upload CSV files</span>
-            <input type="file" multiple="" id="fileInput" onchange="handleFiles(this.files)" accept=".csv">
-        </form>
-        
+                    <form class="uploadBtn">
+                        <span>Upload CSV files</span>
+                        <input type="file" multiple="" id="fileInput" onchange="handleFiles(this.files)" accept=".csv">
+                    </form>
+		</header>
 		<div id="output" class="output clear"></div>
 	</div>
     <script src="./js/read-csv.js"></script>
