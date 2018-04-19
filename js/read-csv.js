@@ -305,6 +305,7 @@ function generateForceFilter() {
 			checkbox.setAttribute('type', 'checkbox');
 			checkbox.setAttribute('name', username);
 			checkbox.setAttribute('id', username);
+			checkbox.setAttribute('class', 'checkbox');
 			innerComponent.appendChild(checkbox);
 			
 			$(checkbox).change(function(event) {
