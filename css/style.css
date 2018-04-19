@@ -134,14 +134,25 @@ input,
 }
 
 .options {
-	display: none;
-	float: right;
+    display: none;
+    float: right;
 
     margin-bottom: 10px;
     border-radius: 5px;
     background-color: #fff;
     padding: 10px;
 }
+
+.options input[type="checkbox"] {
+    width: 15px;
+    position: relative;
+    height: 15px;
+    margin-right: 5px;
+}
+
+.options input[type="range"] {
+    position: relative;
+    top: 3px;
 
 .options--present {
 	max-width: 320px;
